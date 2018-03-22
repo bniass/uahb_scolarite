@@ -1,0 +1,604 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <br/><br/><br/><br/><br/>
+    
+    <div class="container">
+        <h1 style="border:2px solid green;text-align:center; width:100%;">INSCRIPTION / RE-INSCRIPTION ETUDIANT</h1>
+        {{ form_start(form) }}
+        <fieldset class="cadre">
+            <legend class="legende">Informations étudiant</legend>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label>{{ form_label(form.etudiant.civilite) }}</label>
+                    {{ form_widget(form.etudiant.civilite,{'attr':{'class':'form-control champs'}}) }}
+                    {{ form_errors(form.etudiant.civilite) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.prenom) }}</label>
+                    {{ form_widget(form.etudiant.prenom,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.prenom) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.nom) }}</label>
+                    {{ form_widget(form.etudiant.nom,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.nom) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.sexe) }}</label>
+                    {{ form_widget(form.etudiant.sexe,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.sexe) }}
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.religion) }}</label>
+                    {{ form_widget(form.etudiant.religion,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.religion) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.dateNaissance) }}</label>
+                    {{ form_widget(form.etudiant.dateNaissance,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.dateNaissance) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.lieuNaissance) }}</label>
+                    {{ form_widget(form.etudiant.lieuNaissance,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.lieuNaissance) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.paysOrigine) }}</label>
+                    {{ form_widget(form.etudiant.paysOrigine,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.paysOrigine) }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.nationalite) }}</label>
+                    {{ form_widget(form.etudiant.nationalite,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.nationalite) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label">{{ form_label(form.etudiant.telephoneFixe) }}</label>
+                    {{ form_widget(form.etudiant.telephoneFixe,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.telephoneFixe) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Portable 1</label>
+                    {{ form_widget(form.etudiant.telephonePortable1,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.telephonePortable1) }}
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Portable 2</label>
+                    {{ form_widget(form.etudiant.telephonePortable2,{'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.etudiant.telephonePortable2) }}
+                </div>
+            </div>
+        </fieldset>
+        <br/>       
+        <div class="container">
+            <ul class="nav nav-tabs" style="border:2px solid #000;width:100%;margin:auto; ">
+                <li class="active onglet"><a data-toggle="tab" id="m6" href="#menu6">Autres informations</a></li>
+                <li class="onglet"><a data-toggle="tab" id="ho" href="#home">Parents</a></li>
+                <li class="onglet"><a data-toggle="tab" id="m1" href="#menu1">Tuteur / Personne à contacter</a></li>
+                <li class="onglet"><a data-toggle="tab" id="m2" href="#menu2">Diplôme obtenu</a></li>
+                <li class="onglet"><a data-toggle="tab" id="m3" href="#menu3">Filière / classes</a></li>
+                <li class="onglet"><a data-toggle="tab" id="m4" href="#menu4">Infos professionnelles</a></li>
+                <li class="onglet"><a data-toggle="tab" id="m5" href="#menu5">Infos inscription</a></li>
+            </ul>
+            <br>
+            <div class="tab-content">
+                <div id="menu6" class="tab-pane fade in active">
+                    <fieldset class="cadre">
+                        <legend class="legende">informations complémentaires</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.situationMaritale) }}</label>
+                                {{ form_widget(form.etudiant.situationMaritale,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.situationMaritale) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.nbenfant) }}</label>
+                                {{ form_widget(form.etudiant.nbenfant,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.nbenfant) }}
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.email) }}</label>
+                                {{ form_widget(form.etudiant.email,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.email) }}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.region) }}</label>
+                                {{ form_widget(form.etudiant.region,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.region) }}
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label class="form-label">{{ form_label(form.etudiant.adresse) }}</label>
+                                {{ form_widget(form.etudiant.adresse,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.adresse) }}
+                            </div>
+                        </div>    
+
+                    </fieldset>    
+                </div>
+                <div id="home" class="tab-pane fade ">
+                    <fieldset class="cadre">
+                        <legend class="legende">Père</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.pere.nom) }}</label>
+                                {{ form_widget(form.etudiant.pere.nom,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.pere.nom) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.pere.prenom) }}</label>
+                                {{ form_widget(form.etudiant.pere.prenom,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.pere.prenom) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.pere.profession) }}</label>
+                                {{ form_widget(form.etudiant.pere.profession,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.pere.profession) }}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.pere.tel) }}</label>
+                                {{ form_widget(form.etudiant.pere.tel,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.pere.tel) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.pere.email) }}</label>
+                                {{ form_widget(form.etudiant.pere.email,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.pere.email) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.pere.adresse) }}</label>
+                                {{ form_widget(form.etudiant.pere.adresse,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.pere.adresse) }}
+                            </div>
+                        </div>
+                    </fieldset><br>
+
+                    <fieldset class="cadre">
+                        <legend class="legende">Mère</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.mere.nom) }}</label>
+                                {{ form_widget(form.etudiant.mere.nom,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.mere.nom) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.mere.prenom) }}</label>
+                                {{ form_widget(form.etudiant.mere.prenom,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.mere.prenom) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.mere.profession) }}</label>
+                                {{ form_widget(form.etudiant.mere.profession,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.mere.profession) }}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.mere.tel) }}</label>
+                                {{ form_widget(form.etudiant.mere.tel,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.mere.tel) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.mere.email) }}</label>
+                                {{ form_widget(form.etudiant.mere.email,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.mere.email) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.mere.adresse) }}</label>
+                                {{ form_widget(form.etudiant.mere.adresse,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.mere.adresse) }}
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <fieldset class="cadre">
+                        <legend class="legende">Tuteur</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.tuteur.nom) }}</label>
+                                {{ form_widget(form.etudiant.tuteur.nom,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.tuteur.nom) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.tuteur.prenom) }}</label>
+                                {{ form_widget(form.etudiant.tuteur.prenom,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.tuteur.prenom) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.tuteur.profession) }}</label>
+                                {{ form_widget(form.etudiant.tuteur.profession,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.tuteur.profession) }}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.tuteur.tel) }}</label>
+                                {{ form_widget(form.etudiant.tuteur.tel,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.tuteur.tel) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.tuteur.email) }}</label>
+                                {{ form_widget(form.etudiant.tuteur.email,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.tuteur.email) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.tuteur.adresse) }}</label>
+                                {{ form_widget(form.etudiant.tuteur.adresse,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.tuteur.adresse) }}
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br/>        
+                    <fieldset class="cadre">
+                        <legend class="legende">Personne à contacter</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.personneAcontacter.nom) }}</label>
+                                {{ form_widget(form.etudiant.personneAcontacter.nom,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.personneAcontacter.nom) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.personneAcontacter.prenom) }}</label>
+                                {{ form_widget(form.etudiant.personneAcontacter.prenom,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.personneAcontacter.prenom) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.personneAcontacter.profession) }}</label>
+                                {{ form_widget(form.etudiant.personneAcontacter.profession,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.personneAcontacter.profession) }}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.personneAcontacter.tel) }}</label>
+                                {{ form_widget(form.etudiant.personneAcontacter.tel,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.personneAcontacter.tel) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.personneAcontacter.email) }}</label>
+                                {{ form_widget(form.etudiant.personneAcontacter.email,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.personneAcontacter.email) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.personneAcontacter.adresse) }}</label>
+                                {{ form_widget(form.etudiant.personneAcontacter.adresse,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.personneAcontacter.adresse) }}
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <fieldset class="cadre">
+                        <legend class="legende">Diplome BAC</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label class="form-label">{{ form_label(form.etudiant.diplome.libelle) }}</label>
+                                {{ form_widget(form.etudiant.diplome.libelle,{'attr':{'class':'form-control', 'value':'Baccalauréat','readonly':'true'}}) }}
+                                {{ form_errors(form.etudiant.diplome.libelle) }}
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="form-label">{{ form_label(form.etudiant.diplome.serie) }}</label>
+                                {{ form_widget(form.etudiant.diplome.serie,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.diplome.serie) }}
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="form-label">{{ form_label(form.etudiant.diplome.annee) }}</label>
+                                {{ form_widget(form.etudiant.diplome.annee,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.diplome.annee) }}
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="form-label">{{ form_label(form.etudiant.diplome.mention) }}</label>
+                                {{ form_widget(form.etudiant.diplome.mention,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.diplome.mention) }}
+                            </div>
+                        </div>
+
+                    </fieldset> 
+                    <br/>
+                    <fieldset class="cadre">
+                        <legend class="legende">Autre information</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.etablissementDorigine) }}</label>
+                                {{ form_widget(form.etudiant.etablissementDorigine,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.etablissementDorigine) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.filiereAnterieur) }}</label>
+                                {{ form_widget(form.etudiant.filiereAnterieur,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.filiereAnterieur) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.classeAnterieur) }}</label>
+                                {{ form_widget(form.etudiant.classeAnterieur,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.classeAnterieur) }}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.adresseEtablissementDorigine) }}</label>
+                                {{ form_widget(form.etudiant.adresseEtablissementDorigine,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.adresseEtablissementDorigine) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.niveauDentreeUahb) }}</label>
+                                {{ form_widget(form.etudiant.niveauDentreeUahb,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.niveauDentreeUahb) }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label">{{ form_label(form.etudiant.commentConnaisTuUahb) }} ?</label>
+                                {{ form_widget(form.etudiant.commentConnaisTuUahb,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.commentConnaisTuUahb) }}
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <fieldset class="cadre">
+                        <legend class="legende">Informations classe</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="form-label">Filière</label>
+                                <select class="form-control" name="filiserSelect" id="filiereSelect">
+                                    <option value="0">------selectionner la filière-----</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label">Classe</label>
+                                <select class="form-control" name="classeselect" id="deptselect1">
+                                    <option value="0">------selectionner la Classe-----</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="form-label">Spécialité</label>
+                                <select class="form-control" name="specialite" id="optionselect1">
+                                    <option value="0">------selectionner l'option-----</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label">Regime</label>
+                                <select class="form-control" name="regime" id="optionselect1">
+                                    <option value="0">------selectionner l'option-----</option>
+                                </select>
+                            </div>
+                        </div>
+
+                         <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label class="form-label">Observations générales</label>
+                                <textarea name="observations" id="observation" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>    
+                </div>
+                <div id="menu4" class="tab-pane fade">
+                    <fieldset class="cadre">
+                        <legend class="legende">Informations professionnelle</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <input type="radio" value="non" checked='true' id="nonpro" name="pro">
+                                <label class="form-label">Je ne travaille &nbsp;&nbsp;&nbsp;</label>
+                                <input type="radio" value="oui" id="pro" name="pro"> 
+                                <label class="form-label">Je travaille</label>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <fieldset class="cadre1">
+                                    <legend class="legende1">Timing</legend>
+                                    <input type="radio" value="Aucun" id="timing1" name="timing">
+                                    <label class="form-label">Aucun &nbsp;&nbsp;&nbsp;</label>
+                                    <input type="radio" value="Aucun" id="timing2" name="timing"> 
+                                    <label class="form-label">Temps Complet &nbsp;&nbsp;&nbsp;</label>
+                                    <input type="radio" value="Aucun" id="timing3" name="timing">
+                                    <label class="form-label">Temps Partiel</label> &nbsp;&nbsp;&nbsp;
+                                   
+                                </fieldset>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="form-label">{{ form_label(form.etudiant.posteOccupe) }}</label>
+                                {{ form_widget(form.etudiant.posteOccupe,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.posteOccupe) }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label">{{ form_label(form.etudiant.employeur) }}</label>
+                                {{ form_widget(form.etudiant.employeur,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.employeur) }}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="form-label">{{ form_label(form.etudiant.lieuDeTravail) }}</label>
+                                {{ form_widget(form.etudiant.lieuDeTravail,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.lieuDeTravail) }}
+                            </div> 
+                            <div class="form-group col-md-6">
+                                <label class="form-label">{{ form_label(form.etudiant.adresseProfessionnelle) }}</label>
+                                {{ form_widget(form.etudiant.adresseProfessionnelle,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.etudiant.adresseProfessionnelle) }}
+                            </div>
+                        </div>
+                    </fieldset>    
+                </div>
+                <div id="menu5" class="tab-pane fade">
+                    <div style="float:left">
+                        <fieldset class="cadre">
+                            <legend class="legende">Echeancier</legend>
+                            <div class="form-row"> 
+                                <div class="form-group col-md-6">
+                                   <label class="form-label">Inscription</label>
+                                   <input type="number" name="inscription" class='form-control' />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Mai</label>
+                                    <input type="number" name="mai" class='form-control' />
+                                </div>
+                            </div>
+                            <div class="form-row"> 
+                                <div class="form-group col-md-6">
+                                   <label class="form-label">Octobre</label>
+                                   <input type="number" name="octobre" class='form-control' />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Juin</label>
+                                    <input type="number" name="juin" class='form-control' />
+                                </div>
+                            </div>
+                            <div class="form-row"> 
+                                <div class="form-group col-md-6">
+                                   <label class="form-label">Novembre</label>
+                                   <input type="number" name="novembre" class='form-control' />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Juillet</label>
+                                    <input type="number" name="juillet" class='form-control' />
+                                </div>
+                            </div>
+                            <div class="form-row"> 
+                                <div class="form-group col-md-6">
+                                   <label class="form-label">Décembre</label>
+                                   <input type="number" name="decembre" class='form-control' />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Aout</label>
+                                    <input type="number" name="aout" class='form-control' />
+                                </div>
+                            </div>
+                            <div class="form-row"> 
+                                <div class="form-group col-md-6">
+                                   <label class="form-label">Janvier</label>
+                                   <input type="number" name="janvier" class='form-control' />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Septembre</label>
+                                    <input type="number" name="septembre" class='form-control' />
+                                </div>
+                            </div>
+                            <div class="form-row"> 
+                                <div class="form-group col-md-6">
+                                   <label class="form-label">Février</label>
+                                   <input type="number" name="fevrier" class='form-control' />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Octobre</label>
+                                    <input type="number" name="octobre1" class='form-control' />
+                                </div>
+                            </div>
+                            <div class="form-row"> 
+                                <div class="form-group col-md-6">
+                                   <label class="form-label">Mars</label>
+                                   <input type="number" name="mars" class='form-control' />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Novembre</label>
+                                    <input type="number" name="novembre1" class='form-control' />
+                                </div>
+                            </div>
+                            <div class="form-row"> 
+                                <div class="form-group col-md-6">
+                                   <label class="form-label">Avril</label>
+                                   <input type="number" name="avril" class='form-control' />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Décembre</label>
+                                    <input type="number" name="decembre1" class='form-control' />
+                                </div>
+                            </div>
+
+
+
+                        </fieldset>
+                    </div>
+                    <div style="float:right">
+                        <fieldset class="cadre">
+                            <legend class="legende">Informations le paiement</legend>
+                            <div style="float:left;border:1px solid #fff; padding:5px;">
+                                <input type="radio" value="cas non social" id="casnonsocial" name="cassocial">
+                                <label class="form-label">Cas non social &nbsp;&nbsp;&nbsp;</label><br/>
+                                <input type="radio" value="cas social" id="cassocial" name="cassocial">
+                                <label class="form-label">Cas social &nbsp;&nbsp;&nbsp;</label>
+                            </div>
+                            <div style="float:right;border:1px solid #fff;padding:5px;">
+                                <input type="radio" value="Paiement normal" id="paienormal" name="modepaiement">
+                                <label class="form-label">Paiement normal &nbsp;&nbsp;&nbsp;</label>
+                                <input type="radio" value="Exonération total" id="exoneration" name="modepaiement">
+                                <label class="form-label">Cas social &nbsp;&nbsp;&nbsp;</label><br/>
+
+                                <input type="radio" value="Réduction" id="reduction" name="modepaiement">
+                                <label class="form-label">Réduction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <input type="radio" value="Protégé" id="protege" name="modepaiement">
+                                <label class="form-label">Protégé &nbsp;&nbsp;&nbsp;</label>
+
+                            </div>
+                            <div style="clear:both;"></div>
+
+                            <br/>
+                            <div style="float:left;border:1px solid #fff; padding:5px; height:320px;">
+                                <label class="form-label">Droit d'inscription</label>
+                                <input type="number" name="montantins" class='form-control' />
+                                <br/>
+                                
+                                <label class="form-label">Mensualité fixé</label>
+                                <input type="number" name="mensualitefixe" class='form-control' />
+                                <br/>
+
+                                
+                                <label class="form-label">Durée de la scolarité</label>
+                                <input type="number" name="durescolarite" class='form-control' />
+                                <br/>
+
+                                <label class="form-label">Mensualité accordée</label>
+                                {{ form_widget(form.montantAccorde,{'attr':{'class':'form-control'}}) }}
+                                {{ form_errors(form.montantAccorde) }}
+                                <br/>
+                            </div>
+                            <div style="float:right;border:1px solid #fff;padding:5px; height:320px;">
+                                <label class="form-label">Droit d'inscription</label>
+                                <input type="number" name="montantins" class='form-control' />
+                                <br/>
+                                
+                                <label class="form-label">Mensualité fixé</label>
+                                <input type="number" name="mensualitefixe" class='form-control' />
+                                <br/>
+
+
+                            </div>
+                            <div style="clear:both;"></div>
+                            <div style="">
+                                <label class="form-label">Montant total à payer</label>
+                                <input type="number" name="totalscolarite" class='form-control' />
+                            </div>
+                        </fieldset>
+
+
+
+
+                    </div>
+                      
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </div>    
+{% endblock%}
